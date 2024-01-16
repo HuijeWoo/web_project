@@ -46,8 +46,8 @@ def cust_info():
             where finish_date = "{date_value}"'''
 
         elif select_switch == 'driver_name':
-            sql_sentence = f'''select * from new_table where driver_name = 
-            "{text_form}"'''
+            sql_sentence = f'''select * from new_table where driver_name like 
+            "%{text_form}%"'''
 
         else:
             sql_sentence = 'select * from new_table;'
