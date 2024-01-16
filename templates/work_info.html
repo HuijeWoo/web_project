@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 정보</title>
+    
+</head>
+
+<body>    
+    <table border = 1>
+        <tr>
+            <th> 작업 번호 </th>
+            <td> 시작일 </td>
+            <td> 종료일 </td>
+            <td> 운전 담당자 </td>
+        </tr>
+        {% for i in detail: %}
+            <tr>
+                <th>
+                    {{i['work_id']}}
+                </th>
+                <td>
+                    {{i['start_date']}}
+                </td>
+                <td>
+                    {{i['finish_date']}}
+                </td>
+                <td>
+                    {{i['driver_name']}}
+                </td>
+            </tr>
+        {% endfor %}  
+    </table>
+
+</body>
+</html>

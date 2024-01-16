@@ -78,5 +78,10 @@ def login():
         return redirect(url_for('profile'))
 
 
+@app.route('/work_list/<int:work_id>')
+def work_detail(work_id):
+    sql_sentence = f'''select * from new_table where work_id = {work_id}'''
+    return render_template('work_info.html', detail=db_con(sql_sentence))
+
 if __name__ =='__main__':
     app.run(debug=True)
