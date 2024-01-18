@@ -50,9 +50,9 @@ class Drink(de_ba):
         return f'drink_id: {self.drink_id},\nname: {self.name},\nprice: {self.price}\nvolume: {self.volume},\ntotal_cal: {self.total_cal}'
     
 
-class store(de_ba):
+class Store(de_ba):
     __tablename__ = 'store'
-    # ex> s00001
+    # ex> s0001
     store_id = Column(String(5), primary_key=True)
     name = Column(String(50), nullable=False)
     loc = Column(String(100), nullable=False) # ~~시 까지만.
@@ -74,7 +74,7 @@ class store(de_ba):
         return f'store_id: {self.store_id},\nname: {self.name},\nloc: {self.loc}\ntel: {self.tel},\nopen_time: {self.open_time},\nclose_time: {self.close_time}'
     
 
-class review(de_ba):
+class Review(de_ba):
     __tablename__ = 'review'
     # ex> r00001
     review_id = Column(String(5), primary_key=True)
