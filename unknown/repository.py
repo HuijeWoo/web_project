@@ -25,8 +25,25 @@ conn = db_session.connection()
     # conn.commit()
 
 def InsertBread():
-    global conn
-
+    name_candidates = ['식빵', '사과파이', '커피번', '소보루빵', '바게트빵']
+    #price 1500 ~ 5000원 100단위
+    #weight 100 ~ 200g 10단위
+    #total_cal 100~300kcal 10 단위
+    #store_id s0001~s0100
+    
+    for i in range(100):
+        sql1 = insert(Bread).values(
+            bread_id= 'b' + str(i).zfill(4),
+            name=random.choice(name_candidates) + str(i),
+            price=random.randrange(1500, 5000, 100),
+            weight=random.randrange(100, 200, 10),
+            total_cal=random.randrange(100, 300, 10),
+            store_id = 's' + str(random.randint(1,100)).zfill(4)
+        )
+        conn.execute(sql1)
+        
+    conn.commit()
+    
 
 def InsertDrink():
     global conn
@@ -58,6 +75,6 @@ def InsertReview():
     
 
 if __name__ == '__main__':
+    #InsertBread()
     #InsertDrink()
-    
     pass
