@@ -51,6 +51,7 @@ class Drink(de_ba):
     
 
 class store(de_ba):
+    __tablename__ = 'store'
     # ex> s00001
     store_id = Column(String(5), primary_key=True)
     name = Column(String(50), nullable=False)
@@ -74,6 +75,7 @@ class store(de_ba):
     
 
 class review(de_ba):
+    __tablename__ = 'review'
     # ex> r00001
     review_id = Column(String(5), primary_key=True)
     store_id = Column(String(5), nullable=False)
