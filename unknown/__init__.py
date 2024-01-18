@@ -6,6 +6,7 @@ from sqlalchemy import select, delete, insert, update
 if __name__ == '__main__' : 
     # 데이터베이스 테이블 생성
     init_db()
+    print('>>>>>>>>>>>>>>>>>>>>>>>>')
     # 데이터 입력
     # u = User('son', 'son@localhost')
     # db_session.add(u)
@@ -24,7 +25,7 @@ if __name__ == '__main__' :
     # print('-------------------------------------')
     # print(Dept.query.first())
 
-    # stmt1 = select(Drink).where(Drink.name == 'son')
+    # stmt1 = select(User).where(User.name == 'son')
     # print(stmt1)
     # with engine.connect() as conn:
     #     for row in conn.execute(stmt1):

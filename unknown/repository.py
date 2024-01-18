@@ -38,7 +38,8 @@ def InsertDrink():
     
     for i in range(100):
         sql1 = insert(Drink).values(
-            name=random.choice(name_candidates) + i,
+            drink_id= 'd' + str(i).zfill(4),
+            name=random.choice(name_candidates) + str(i),
             price=random.randrange(1500, 5000, 100),
             volume=random.randrange(250, 500, 50),
             total_cal=random.randrange(10, 200, 10),
@@ -57,4 +58,6 @@ def InsertReview():
     
 
 if __name__ == '__main__':
-    InsertDrink()
+    #InsertDrink()
+    
+    pass

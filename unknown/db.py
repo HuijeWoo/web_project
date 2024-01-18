@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker, declarative_base
-# from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 import config
 
 engine = create_engine(config.SQLALCHEMY_DATABASE_URI)
@@ -14,5 +14,10 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 de_ba = declarative_base()
 de_ba.query = db_session.query_property()
 
-def get_session():
-    return db_session()
+def init_db():
+    # import all modules here that might define models so that
+    # they will be registered properly on the metadata.  Otherwise
+    # you will have to import them first before calling init_db()
+    import db_list  # 프로젝트에 필요한 모델 클래스
+    de_ba.metadata.create_all(bind=engine)
+
