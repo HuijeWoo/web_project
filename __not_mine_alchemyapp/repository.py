@@ -38,6 +38,10 @@ def selectDeptsbyDeptno(deptno) :
     global conn
 
     sql1 = select(Dept).where(Dept.deptno == deptno)
+
+
+
+
     print(sql1)
     sql2 = f'''SELECT depts.deptno, depts.dname, depts.loc 
             FROM depts 
@@ -64,7 +68,13 @@ def insertDept(dname, loc):
     global conn
 
     sql1 = insert(Dept).values(dname=dname, loc=loc)
+    
+    
+    
     print(sql1)
+    
+    
+    
     sql2 = f'''INSERT INTO depts (dname, loc) VALUES (\'{dname}\', \'{loc}\')'''
     print(sql2)
 
@@ -105,9 +115,9 @@ def deleteDept(deptno) :
 
 if __name__ == '__main__':
     #selectDeptsAll()
-    #selectDeptsbyDeptno(10)
+    selectDeptsbyDeptno(10)
     #insertDept('개발팀', '서울')
     #updateDept(10, 'QA', '판교')
-    deleteDept(13)
+    #deleteDept(13)
 
 

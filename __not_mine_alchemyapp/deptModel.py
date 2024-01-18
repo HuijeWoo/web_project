@@ -11,8 +11,8 @@ class User(Base):
         self.name = name
         self.email = email
 
-    # def __repr__(self):
-    #     return '<User %r>' % (self.name)
+    def __repr__(self):
+        return '<User %r>' % (self.name)
     
     def __str__(self) :
         return f'id: {id}, email: {self.name}, name: {self.email}'

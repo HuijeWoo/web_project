@@ -1,6 +1,6 @@
 # https://docs.sqlalchemy.org/en/20/core/constraints.html
 
-from sqlalchemy import Column, CheckConstraint, Integer, String, Time, Day
+from sqlalchemy import Column, CheckConstraint, Integer, String, Time
 from db import de_ba
 
 class Bread(de_ba):

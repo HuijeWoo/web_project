@@ -14,7 +14,10 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 Base = declarative_base()
 Base.query = db_session.query_property()
 
-def get_session():
-    return db_session()
-
+def init_db():
+    # import all modules here that might define models so that
+    # they will be registered properly on the metadata.  Otherwise
+    # you will have to import them first before calling init_db()
+    import deptModel  # 프로젝트에 필요한 모델 클래스
+    Base.metadata.create_all(bind=engine)
 
